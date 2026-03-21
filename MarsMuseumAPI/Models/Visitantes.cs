@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MarsMuseumAPI.Models
 {
@@ -24,8 +25,11 @@ namespace MarsMuseumAPI.Models
 
         public bool PesquisaCompleta { get; set; }
 
-        // Navegação
+        // Navegação - JsonIgnore evita que sejam exigidos no POST
+        [JsonIgnore]
         public virtual ICollection<VisitaExposicao> VisitasExposicao { get; set; }
+
+        [JsonIgnore]
         public virtual Pesquisa Pesquisa { get; set; }
     }
 }
