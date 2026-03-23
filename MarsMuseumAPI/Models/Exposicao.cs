@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MarsMuseumAPI.Models
 {
@@ -17,6 +18,7 @@ namespace MarsMuseumAPI.Models
         public int OrdemExibicao { get; set; }
 
         // Navegação
+        [JsonIgnore]
         public virtual ICollection<VisitaExposicao> VisitasExposicao { get; set; }
     }
 }

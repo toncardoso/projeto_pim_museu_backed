@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MarsMuseumAPI.Models
 {
@@ -35,6 +36,7 @@ namespace MarsMuseumAPI.Models
         public DateTime DataHora { get; set; }
 
         // Navegação
+        [JsonIgnore]
         public virtual Visitante Visitante { get; set; }
     }
 }
